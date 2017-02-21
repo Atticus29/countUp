@@ -18,7 +18,7 @@ $(function(){
     var to = parseInt($("#to").val());
     var by = parseInt($("#by").val());
     // console.log(to, by);
-    if ((to && by) && to>=0 && by>=0 && checkType(to) && checkType(by) ){
+    if ((to && by) && to>=0 && by>=0 && checkType(to) && checkType(by) && to>=by){
       // console.log("Go into the if statement");
       var x = by;
       // console.log("x is " + x);
@@ -31,6 +31,9 @@ $(function(){
         $(".results").append("<li>" + mult[i-1] + "</li>");
       }
       console.log(mult);
+    }
+    else{
+      alert("Either at least one of your inputs is not a number, is a negative number, or 'to' is less than 'by'");
     }
   });
 });
